@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ICCR Visa Checklist – Sisekelo Mahlalela</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #eef3f9;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #0078d7;
+      margin-bottom: 10px;
+    }
+    h2 {
+      color: #333;
+      font-size: 1.2em;
+      margin-top: 30px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #fff;
+      margin: 8px 0;
+      padding: 10px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    }
+    input[type=checkbox] {
+      margin-right: 12px;
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>🧳 ICCR Visa Checklist</h1>
+
+  <h2>🪪 Identification & Personal Documents</h2>
+  <ul id="section1">
+    <li><input type="checkbox">Valid Passport</li>
+    <li><input type="checkbox">Passport-size Photos</li>
+  </ul>
+
+  <h2>📑 Scholarship & University Documents</h2>
+  <ul id="section2">
+    <li><input type="checkbox">ICCR Award Letter</li>
+    <li><input type="checkbox">Admission Letter from Andhra University</li>
+    <li><input type="checkbox">Undertaking Letter (accepting assigned course)</li>
+  </ul>
+
+  <h2>📚 Academic Documents</h2>
+  <ul id="section3">
+    <li><input type="checkbox">Certified Transcripts</li>
+    <li><input type="checkbox">Grade 12 Syllabus</li>
+    <li><input type="checkbox">English Proficiency Certificate-  (if requested by university)
+🩺 Health & Fitness
+- [ ] Medical fitness certificate from a licensed physician
+- [ ] Proof of medical insurance worth ₹5 lakh (optional before travel; mandatory after arrival)
+🛂 Visa Application
+- [ ] Filled Indian Student Visa application form
+- [ ] Copy of flight booking itinerary (once finalized)
+- [ ] Any other required forms from the Indian High Commission in Eswatini
+📥 Post-Visa Steps
+- [ ] Upload visa copy to ICCR A2A Portal
+- [ ] Notify Indian High Commission of your travel plan
+- [ ] Gather ₹50,000 (~US$700) for initial living expenses
+
+If you want this checklist turned into a visual timeline or need help organizing documents into folders (physical or digital), I can help sort it all out next. We’re setting you up for smooth skies ahead 🌤️📦🧳.
+</li>
+  </ul>
+
+  <h2>🩺 Health Requirements</h2>
+  <ul id="section4">
+    <li><input type="checkbox">Medical Fitness Certificate</li>
+    <li><input type="checkbox">Proof of Insurance (₹5 lakh)</li>
+  </ul>
+
+  <h2>✈️ Travel & Visa Essentials</h2>
+  <ul id="section5">
+    <li><input type="checkbox">Flight Booking Itinerary</li>
+    <li><input type="checkbox">Filled Visa Application Form</li>
+    <li><input type="checkbox">Upload Visa Copy to ICCR A2A Portal</li>
+    <li><input type="checkbox">Notify Indian High Commission of Travel Plan</li>
+    <li><input type="checkbox">Carry ₹50,000 for Initial Expenses</li>
+  </ul>
+
+  <script>
+    // Auto-save checklist progress across sections
+    document.querySelectorAll("ul").forEach((section, sIndex) => {
+      section.querySelectorAll("input[type='checkbox']").forEach((cb, i) => {
+        const key = `checklist-s${sIndex}-item${i}`;
+        cb.checked = localStorage.getItem(key) === "true";
+        cb.addEventListener("change", () => {
+          localStorage.setItem(key, cb.checked);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
